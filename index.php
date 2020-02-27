@@ -1,3 +1,3 @@
 <?php
-    echo "admin page test"
+    echo "admin page test";
 ?>
