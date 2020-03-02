@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'fbc4428972f06a5eca49dba8e23d63f6' => $vendorDir . '/phpish/http/http.php',
-    'a7fc648b09488172d002f2931923f028' => $vendorDir . '/phpish/shopify/shopify.php',
+    '320cde22f66dd4f5d3fd621d3e88b98f' => $vendorDir . '/symfony/polyfill-ctype/bootstrap.php',
+    '6124b4c8570aa390c21fafd04a26c69f' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
 );
