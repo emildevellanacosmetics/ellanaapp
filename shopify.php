@@ -13,7 +13,7 @@
 
 
 
-      $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=all";
+      $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
       $shopcurl = curl_init();
       curl_setopt($shopcurl, CURLOPT_URL, $url);
       curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
