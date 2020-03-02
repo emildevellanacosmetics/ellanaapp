@@ -19,6 +19,6 @@
   $response = curl_exec ($shopcurl);
   curl_close ($shopcurl);
   
-  echo $response->count ;
+  echo $response.count ;
   // echo $product_xml->variants->variant->{'inventory-quantity'};
 ?>
