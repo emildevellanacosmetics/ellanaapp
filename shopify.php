@@ -25,5 +25,6 @@
   $product_xml = new SimpleXMLElement($response); 
 
   echo $product_xml;
+  echo "error";
   // echo $product_xml->variants->variant->{'inventory-quantity'};
 ?>
