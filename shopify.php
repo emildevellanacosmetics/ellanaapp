@@ -9,8 +9,13 @@
   $STORE_URL = 'ellana-cosmetics.myshopify.com';
   $PRODUCT_ID = 'product-id-here';
   
+  if(isset($_GET['ajaxcall']))
+  {
+    echo $_GET['ajaxcall'];
+  } else {
+    echo "not recieved";
+  }
 
-  echo $_GET['ajaxcall'];
 
 
 
