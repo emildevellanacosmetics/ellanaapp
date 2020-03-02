@@ -12,7 +12,7 @@
 
 
 
-  if (isset($_GET['ajaxcall'])!="getall") {
+  if (isset($_GET['ajaxcall'])=="getall") {
       $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=all";
       $shopcurl = curl_init();
       curl_setopt($shopcurl, CURLOPT_URL, $url);
@@ -28,7 +28,7 @@
       $json_returned = json_decode($response, true);
       echo $json_returned['count'];  
       // echo $product_xml->variants->variant->{'inventory-quantity'};
-   }else if (isset($_GET['ajaxcall'])!="getshipped"){
+   }else if (isset($_GET['ajaxcall'])=="getshipped"){
       $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?fulfillment_status=shipped";
       $shopcurl = curl_init();
       curl_setopt($shopcurl, CURLOPT_URL, $url);
