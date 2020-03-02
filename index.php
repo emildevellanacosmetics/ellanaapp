@@ -13,7 +13,7 @@
   curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
   curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
-  curl_setopt($shopcurl, CURLOPT_HEADER, 1);
+  // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
   curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "GET");
   curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
   $response = curl_exec ($shopcurl);
