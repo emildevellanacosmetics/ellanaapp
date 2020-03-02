@@ -9,7 +9,7 @@
   $STORE_URL = 'ellana-cosmetics.myshopify.com';
   $PRODUCT_ID = 'product-id-here';
   
-  $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json";
+  $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?financial_status=paid";
   $shopcurl = curl_init();
   curl_setopt($shopcurl, CURLOPT_URL, $url);
   curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
