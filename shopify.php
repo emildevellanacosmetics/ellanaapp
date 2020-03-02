@@ -24,6 +24,6 @@
 
   $product_xml = new SimpleXMLElement($response); 
 
-  echo $product_xml->count;
+  echo $product_xml;
   // echo $product_xml->variants->variant->{'inventory-quantity'};
 ?>
