@@ -10,7 +10,7 @@
   
 
 
-if(isset($_GET['ajaxcall']){
+if(isset($_GET['ajaxcall'])){
   if ($_GET['ajaxcall']=='getall') {
       $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
       $shopcurl = curl_init();
@@ -47,6 +47,8 @@ if(isset($_GET['ajaxcall']){
     echo "not accepted";
   }
 
+}else{
+  echo "not recieved";
 }
 
 
