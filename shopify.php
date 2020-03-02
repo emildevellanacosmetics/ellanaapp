@@ -7,7 +7,7 @@
   $STORE_URL = 'ellana-cosmetics.myshopify.com';
   $PRODUCT_ID = 'product-id-here';
 
-  $url = 'https://' . $API_KEY . ':' . md5($SECRET) . '@' . $STORE_URL . '/admin/api/2020-01/orders/count.json';
+  $url = 'https://' . $API_KEY . ':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@' . $STORE_URL . '/admin/api/2020-01/orders/count.json';
 
   $session = curl_init();
 
