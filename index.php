@@ -20,7 +20,7 @@
   curl_close ($shopcurl);
   
   echo "<pre>";
-  print_r($response);
+  print_r($response->count);
 
   echo $response ;
   echo "error";
