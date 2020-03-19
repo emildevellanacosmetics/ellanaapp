@@ -18,7 +18,7 @@ if(isset($_SESSION['entry'])){
       $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
 
       /* Check Username and Password existence in defined array */
-      if ($Username == "superadmin" && $Password == "A/9?g@YU"){
+      if ($Username == "admin@ellenacosmetics.com" && $Password == "A/9?g@YU"){
         /* Success: Set session variables and redirect to Protected page  */
         $_SESSION['entry']='good';
         header("location:main.php");
@@ -67,7 +67,7 @@ if(isset($_SESSION['entry'])){
 
       <form action="" method="post">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="text" class="form-control" placeholder="Email" name="Username">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -75,7 +75,7 @@ if(isset($_SESSION['entry'])){
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" placeholder="Password" name="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
