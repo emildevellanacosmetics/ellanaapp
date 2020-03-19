@@ -1,4 +1,40 @@
+<?php 
+session_start(); 
+/* Starts the session */
+/* Check Login form submitted */
 
+if(isset($_SESSION['entry'])){
+  if($_SESSION['entry'] == "good"){
+    header("location:main.php");
+    exit;
+  }else{
+    if(isset($_POST['Submit'])){
+      /* Define username and associated password array */
+
+
+      /* Check and assign submitted Username and Password to new variable */
+
+      $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
+      $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
+
+      /* Check Username and Password existence in defined array */
+      if ($Username == "superadmin" && $Password == "A/9?g@YU"){
+        /* Success: Set session variables and redirect to Protected page  */
+        $_SESSION['entry']='good';
+        header("location:main.php");
+        exit;
+      } else {
+        $_SESSION['entry']='bad';
+        /*Unsuccessful attempt: Set error message */
+        $msg="<span style='color:red'>Invalid Login Details</span>";
+      }
+    }
+  }
+}else{
+
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
