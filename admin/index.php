@@ -27,6 +27,7 @@ if(isset($_SESSION['entry'])){
         $_SESSION['entry']='bad';
         /*Unsuccessful attempt: Set error message */
         $msg="<span style='color:red'>Invalid Login Details</span>";
+        echo $msg;
       }
     }
   }
