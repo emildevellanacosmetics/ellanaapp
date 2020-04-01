@@ -8,7 +8,52 @@
   $STORE_URL = 'ellana-cosmetics.myshopify.com';
   $PRODUCT_ID = 'product-id-here';
   
+  require "config.php";
+  require "common.php";
 
+
+  if(isset($_POST['beautyquiz'])){
+    $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
+    // here i would like use foreach:  
+      
+       $iduser = $dataJson.iduser;
+       $aq1 = $dataJson.aq1;
+       $aq2 = $dataJson.aq2;
+       $aq3 = $dataJson.aq3;
+       $bq1 = $dataJson.bq1;
+       $bq2 = $dataJson.bq2;
+       $bq3 = $dataJson.bq3;
+       $cq1 = $dataJson.cq1;
+       $dq1 = $dataJson.dq1;
+       echo $dq1;
+    /*
+    if (isset($_POST['submit'])) {
+      if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
+    
+      try {
+        $connection = new PDO($dsn, $username, $password, $options);
+    
+    
+        $sql = "UPDATE user
+                SET  
+                aq1 = $aq1;
+                aq2 = $aq2;
+                aq3 = $aq3;
+                bq1 = $bq1;
+                bq2 = $bq2;
+                bq3 = $bq3;
+                cq1 = $cq1;
+                dq1 = $dq1;
+                WHERE iduser =  $iduser";
+      
+      $statement = $connection->prepare($sql);
+      $statement->execute($user);
+      } catch(PDOException $error) {
+          echo $sql . "<br>" . $error->getMessage();
+      }
+    }
+   */
+  }
 
 if(isset($_GET['ajaxcall'])){
   if ($_GET['ajaxcall']=='getall') {
