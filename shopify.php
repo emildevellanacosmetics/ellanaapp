@@ -14,14 +14,14 @@
 */
 
   if(isset($_POST['beautyquiz'])){
-   $user = $_POST['beautyquiz']);
+  
  
 //Decode the JSON string and convert it into a PHP associative array.
     
 
 //var_dump the array so that we can view it's structure.
     
-    echo $user;
+    echo "dsfsdf";
       /*  $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
     // here i would like use foreach:  
       $var = $dataJson.iduser ?? "";
