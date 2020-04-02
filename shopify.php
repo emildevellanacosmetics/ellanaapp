@@ -25,17 +25,17 @@
    // $data = json_encode($_POST['beautyquiz']);
   $data = $_POST['beautyquiz'];
       
-       $aq1 = $data['aq1'] ?? "";
-       $aq2 = $data['aq2'] ?? "";
-       $aq3 = $data['aq3'] ?? "";
-       $bq1 = $data['bq1'] ?? "";
-       $bq2 = $data['bq2'] ?? "";
-       $bq3 = $data['bq3'] ?? "";
-       $cq1 = $data['cq1'] ?? "";
-       $dq1 = $data['dq1'] ?? "";
-       $iduser = $data['iduser'] ?? "";
+       $aq1 = $data['aq1'];
+       $aq2 = $data['aq2'];
+       $aq3 = $data['aq3'];
+       $bq1 = $data['bq1'];
+       $bq2 = $data['bq2'];
+       $bq3 = $data['bq3'];
+       $cq1 = $data['cq1'];
+       $dq1 = $data['dq1'];
+       $iduser = $data['iduser'];
              
-        $sql = "INSERT INTO user                
+        $sql = "INSERT INTO heroku_30c47afc2d3c720.user                
                 (
                 iduser,
                 aq1,
