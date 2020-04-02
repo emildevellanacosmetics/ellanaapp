@@ -42,7 +42,7 @@ if ($conn->connect_error) {
        $dq1 = $data['dq1'];
        $iduser = $data['iduser'];
              
-        $sql = "INSERT INTO user                
+        $sql = "INSERT INTO heroku_30c47afc2d3c720.user                
                 (
                 iduser,
                 aq1,
@@ -62,7 +62,7 @@ if ($conn->connect_error) {
                 '".$bq2.",
                 '".$bq3."',
                 '".$cq1."',
-                '". $dq1."',               
+                '". $dq1."'            
                 )";
 
                 
