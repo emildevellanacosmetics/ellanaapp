@@ -21,7 +21,6 @@
    // $data = json_encode($_POST['beautyquiz']);
   $data = $_POST['beautyquiz'];
     
-    echo $data['aq1'];
 
       
        $aq1 = $data['aq1'] ?? "";
@@ -33,7 +32,7 @@
        $cq1 = $data['cq1'] ?? "";
        $dq1 = $data['dq1'] ?? "";
        $iduser = $data['iduser'] ?? "";
-
+    echo $iduser;
     if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
     
       try {
