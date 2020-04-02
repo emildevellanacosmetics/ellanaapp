@@ -13,7 +13,8 @@
 
 
   if(isset($_POST['beautyquiz'])){
-    $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
+    echo "sdfsdf";
+      /*  $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
     // here i would like use foreach:  
       $var = $dataJson.iduser ?? "";
       
@@ -25,8 +26,8 @@
        $bq3 = $dataJson.bq3 ?? "";
        $cq1 = $dataJson.cq1 ?? "";
        $dq1 = $dataJson.dq1 ?? "";
-       echo "sdfsdf";
-    /*
+     
+
     if (isset($_POST['submit'])) {
       if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
     
