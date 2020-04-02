@@ -34,14 +34,8 @@
        $cq1 = $data['cq1'] ?? "";
        $dq1 = $data['dq1'] ?? "";
        $iduser = $data['iduser'] ?? "";
-   
-    if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
-    
-
-                   
- 
              
-        $sql = "INSERT INTO heroku_30c47afc2d3c720.user                
+        $sql = "INSERT INTO user                
                 (
                 iduser,
                 aq1,
