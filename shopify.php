@@ -20,7 +20,8 @@
     
    // $data = json_encode($_POST['beautyquiz']);
   $data = $_POST['beautyquiz'];
-    echo $data[0]['aq1'];
+    
+    echo $data['aq1'];
       /*  $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
     // here i would like use foreach:  
       $var = $dataJson.iduser ?? "";
