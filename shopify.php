@@ -53,6 +53,8 @@
       }
     }
    */
+  }else{
+    echo "not recieved 2";
   }
 
 if(isset($_GET['ajaxcall'])){
@@ -110,9 +112,7 @@ if(isset($_GET['ajaxcall'])){
     echo "not accepted";
   }
 
-}else{
-  echo "not recieved";
-}
+
 
 
 ?>
