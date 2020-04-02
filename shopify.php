@@ -25,7 +25,7 @@
        $bq3 = $dataJson.bq3;
        $cq1 = $dataJson.cq1;
        $dq1 = $dataJson.dq1;
-       echo $dq1;
+       echo "sdfsdf";
     /*
     if (isset($_POST['submit'])) {
       if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
