@@ -40,7 +40,7 @@
     
       
              
-        $sql = "INSERT INTO heroku_30c47afc2d3c720.user                
+        $sql = "INSERT INTO user                
                 (
                 iduser,
                 aq1,
