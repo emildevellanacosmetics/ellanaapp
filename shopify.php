@@ -38,7 +38,7 @@
       try {
         $connection = new PDO($dsn, $username, $password, $options);
     
-
+      
              
         $sql = "INSERT INTO heroku_30c47afc2d3c720.user                
                 (
@@ -52,15 +52,15 @@
                 cq1,
                 dq1
                 ) VALUES (
-                 ".$iduser.",
-                ".$aq1.",
-                ".$aq2.",
-                ".$aq3.",
-                ".$bq1.",
-                ".$bq2.",
-                ".$bq3.",
-                ".$cq1.",
-                ". $dq1.",               
+                 '".$iduser."',
+                '".$aq1."',
+                '".$aq2."',
+                '".$aq3."',
+                '".$bq1."',
+                '".$bq2.",
+                '".$bq3."',
+                '".$cq1."',
+                '". $dq1."',               
                 )";
       
       $statement = $connection->prepare($sql);
