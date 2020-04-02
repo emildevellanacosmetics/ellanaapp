@@ -12,7 +12,14 @@
   require "common.php";
 
 
-  if(isset($_POST['beautyquiz']['aq1'])){
+  if(isset($_POST['beautyquiz'])){
+    $user = $_POST['beautyquiz']);
+ 
+//Decode the JSON string and convert it into a PHP associative array.
+    $decoded = json_decode($user, true);
+ 
+//var_dump the array so that we can view it's structure.
+    
     echo "sdfsdf";
       /*  $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
     // here i would like use foreach:  
@@ -57,7 +64,7 @@
   }else{
     echo "not recieved 2";
   }
-echo "asdfsdf";
+
 if(isset($_GET['ajaxcall'])){
   if ($_GET['ajaxcall']=='getall') {
       $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
