@@ -15,16 +15,16 @@
   if(isset($_POST['beautyquiz'])){
     $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
     // here i would like use foreach:  
+      $var = $dataJson.iduser ?? "";
       
-       $iduser = $dataJson.iduser;
-       $aq1 = $dataJson.aq1;
-       $aq2 = $dataJson.aq2;
-       $aq3 = $dataJson.aq3;
-       $bq1 = $dataJson.bq1;
-       $bq2 = $dataJson.bq2;
-       $bq3 = $dataJson.bq3;
-       $cq1 = $dataJson.cq1;
-       $dq1 = $dataJson.dq1;
+       $aq1 = $dataJson.aq1 ?? "";
+       $aq2 = $dataJson.aq2 ?? "";
+       $aq3 = $dataJson.aq3 ?? "";
+       $bq1 = $dataJson.bq1 ?? "";
+       $bq2 = $dataJson.bq2 ?? "";
+       $bq3 = $dataJson.bq3 ?? "";
+       $cq1 = $dataJson.cq1 ?? "";
+       $dq1 = $dataJson.dq1 ?? "";
        echo "sdfsdf";
     /*
     if (isset($_POST['submit'])) {
