@@ -5,19 +5,12 @@
   $SECRET = '58b2593d6f6244ea402434320e31a1dc';
   $TOKEN = '58b2593d6f6244ea402434320e31a1dc';
   $STORE_URL = 'ellana-cosmetics.myshopify.com';
-  $PRODUCT_ID = 'product-id-here';
+
   
   
-
-  require "config.php";
-  require "common.php";
-
 
   if(isset($_POST['beautyquiz'])){
-    $user = $_POST['beautyquiz']);
- 
-//Decode the JSON string and convert it into a PHP associative array.
-    $decoded = json_decode($user, true);
+
  
 //var_dump the array so that we can view it's structure.
     
