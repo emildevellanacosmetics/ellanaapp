@@ -6,7 +6,10 @@
   $TOKEN = '58b2593d6f6244ea402434320e31a1dc';
   $STORE_URL = 'ellana-cosmetics.myshopify.com';
 
-  
+  /*
+  require "config.php";
+  require "common.php";
+*/
   
 
   if(isset($_POST['beautyquiz'])){
@@ -17,7 +20,7 @@
  
 //var_dump the array so that we can view it's structure.
     
-    echo $decoded['aq1'];
+    echo $decoded;
       /*  $dataJson = json_decode(stripslashes($_POST['beautyquiz']));
     // here i would like use foreach:  
       $var = $dataJson.iduser ?? "";
