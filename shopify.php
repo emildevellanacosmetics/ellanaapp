@@ -6,13 +6,17 @@
   $TOKEN = '58b2593d6f6244ea402434320e31a1dc';
   $STORE_URL = 'ellana-cosmetics.myshopify.com';
   $PRODUCT_ID = 'product-id-here';
-  
-  
 
+  $servername = "us-cdbr-iron-east-04.cleardb.net";
+  $username = "b373f528b8e38d";
+  $password = "e6cdc6ea";
+  $dbname = "heroku_30c47afc2d3c720";
+  
+/*
   require "config.php";
   require "common.php";
 
-
+*/
   if(isset($_POST['beautyquiz'])){
   
  
@@ -20,8 +24,6 @@
     
    // $data = json_encode($_POST['beautyquiz']);
   $data = $_POST['beautyquiz'];
-    
-
       
        $aq1 = $data['aq1'] ?? "";
        $aq2 = $data['aq2'] ?? "";
@@ -32,15 +34,14 @@
        $cq1 = $data['cq1'] ?? "";
        $dq1 = $data['dq1'] ?? "";
        $iduser = $data['iduser'] ?? "";
-    echo $iduser;
+   
     if (!hash_equals($_SESSION['csrf'], $_POST['csrf'])) die();
     
-      try {
-        $connection = new PDO($dsn, $username, $password, $options);
-    
-      
+
+                   
+ 
              
-        $sql = "INSERT INTO user                
+        $sql = "INSERT INTO heroku_30c47afc2d3c720.user                
                 (
                 iduser,
                 aq1,
@@ -62,12 +63,18 @@
                 '".$cq1."',
                 '". $dq1."',               
                 )";
-      
-      $statement = $connection->prepare($sql);
-      $statement->execute($user);
-      } catch(PDOException $error) {
-          echo $sql . "<br>" . $error->getMessage();
-      }
+
+                
+
+                
+                if ($conn->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                } else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+                
+                $conn->close();              
+
 
   }else{
     echo "not recieved 2";
