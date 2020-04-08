@@ -41,7 +41,7 @@ if ($conn->connect_error) {
        $cq1 = $data['cq1'];
        $dq1 = $data['dq1'];
        $iduser = $data['iduser'];
-             
+      
         $sql = "INSERT INTO user                
                 (
                 iduser,
@@ -62,7 +62,7 @@ if ($conn->connect_error) {
                 '".$bq2."',
                 '".$bq3."',
                 '".$cq1."',
-                '". $dq1."'            
+                '".$dq1."'            
                 )";
 
                 
@@ -71,7 +71,23 @@ if ($conn->connect_error) {
                 if ($conn->query($sql) === TRUE) {
                     echo "New record created successfully";
                 } else {
-                    echo "Error: " . $sql . "<br>" . $conn->error;
+                  $sql = "UPDATE user
+                  SET
+                      aq1 = '"$aq1"',
+                      aq2 = '"$aq2"',
+                      aq3 = '"$aq3"',
+                      bq1 = '"$bq1"',
+                      bq2 = '"$bq2"',
+                      bq3 = '"$bq3"',
+                      cq1 = '"$cq1"',
+                      dq1 = '"$dq1"'
+                  WHERE iduser = '"$iduser"'; 
+
+                  if ($conn->query($sql) === TRUE) {
+                    echo "Record updated successfully";
+                  } else {
+                    echo "Update Error";
+                  }
                 }
                 
                 $conn->close();              
