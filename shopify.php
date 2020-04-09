@@ -62,12 +62,39 @@ if (isset($_POST['beautyquiz']))
         if ($conn->query($sql) === TRUE) {
           echo "Recordupdatedsuccessfully";
         } else {
-          echo "UpdateError";
+          echo "Update Error";
         }
-       }else{
+    }else{
      
+          $sql = "INSERT INTO user                
+          (
+          iduser,
+          aq1,
+          aq2,
+          aq3,
+          bq1,
+          bq2,
+          bq3,
+          cq1,
+          dq1
+          ) VALUES (
+          '".$iduser."',
+          '".$aq1."',
+          '".$aq2."',
+          '".$aq3."',
+          '".$bq1."',
+          '".$bq2."',
+          '".$bq3."',
+          '".$cq1."',
+          '".$dq1."'            
+          )";
 
-       }
+        if ($conn->query($sql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+          echo "Insert error";
+        }
+    }
        
 
                 $conn->close();              
