@@ -42,7 +42,30 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1'];
     $iduser = $data['iduser'];
 
-    
+    $query = "SELECT * from user where iduser='" . $iduser . "'";
+    $result = $conn->query($query);
+
+    if (mysqli_num_rows($result) > 0)
+    {
+        $sql = "UPDATE user
+            SET
+            aq1 = '" . $aq1 . "',
+            aq2 = '" . $aq2 . "',
+            aq3 = '" . $aq3 . "',
+            bq1 = '" . $bq1 . "',
+            bq2 = '" . $bq2 . "',
+            bq3 = '" . $bq3 . "',
+            cq1 = '" . $cq1 . "',
+            dq1 = '" . $dq1 . "'
+        WHERE iduser = '" . $iduser . "';
+
+        if ($conn->query($sql) === TRUE) {
+          echo "Recordupdatedsuccessfully";
+        } else {
+          echo "Update Error";
+        }
+    }else{
+     
           $sql = "INSERT INTO user                
           (
           iduser,
@@ -71,7 +94,8 @@ if (isset($_POST['beautyquiz']))
         } else {
           echo "Insert error";
         }
-           
+    }
+       
 
                 $conn->close();              
 
