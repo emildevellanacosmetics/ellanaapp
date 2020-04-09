@@ -42,10 +42,17 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1'];
     $iduser = $data['iduser'];
 
-    $query = "SELECT * from user where iduser='" . $iduser . "'";
-    $result = $conn->query($query);
 
-    if (mysqli_num_rows($result) > 0)
+
+
+    $stmt = $mysqli->prepare("SELECT iduser from user where iduser = ? ");
+      $stmt->bind_param('s', $iduser);        
+      $stmt->execute();
+      $stmt->bind_result($iduser);
+      $stmt->store_result();
+      $numRows = $stmt->num_rows;
+
+    if ($numRows > 0)
     {
         $sql = "UPDATE user
             SET
