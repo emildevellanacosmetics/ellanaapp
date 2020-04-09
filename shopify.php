@@ -45,7 +45,7 @@ if (isset($_POST['beautyquiz']))
 
 
 
-    $stmt = $mysqli->prepare("SELECT iduser from user where iduser = ? ");
+    $stmt = $conn->prepare("SELECT iduser from user where iduser = ? ");
       $stmt->bind_param('s', $iduser);        
       $stmt->execute();
       $stmt->bind_result($iduser);
