@@ -43,7 +43,7 @@ if (isset($_POST['beautyquiz']))
     $iduser = $data['iduser'];
 
     $query = "SELECT * from user where iduser='" . $iduser . "'";
-    $result = mysql_query($query);
+    $result = $conn->query($query);
 
     if (mysql_num_rows($result) > 0)
     {
