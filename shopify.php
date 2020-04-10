@@ -42,9 +42,6 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1'];
     $iduser = $data['iduser'];
 
-
-
-
     $stmt = $conn->prepare("SELECT iduser from user where iduser = ? ");
       $stmt->bind_param('s', $iduser);        
       $stmt->execute();
@@ -54,53 +51,9 @@ if (isset($_POST['beautyquiz']))
 
     if ($numRows > 0)
     {
-        $sql = "UPDATE user
-            SET
-            aq1 = '" . $aq1 . "',
-            aq2 = '" . $aq2 . "',
-            aq3 = '" . $aq3 . "',
-            bq1 = '" . $bq1 . "',
-            bq2 = '" . $bq2 . "',
-            bq3 = '" . $bq3 . "',
-            cq1 = '" . $cq1 . "',
-            dq1 = '" . $dq1 . "'
-        WHERE iduser = '" . $iduser . "';
-
-        if ($conn->query($sql) === TRUE) {
-          echo "Recordupdatedsuccessfully";
-        } else {
-          echo "Update Error";
-        }
+       echo "exist";
     }else{
-     
-          $sql = "INSERT INTO user                
-          (
-          iduser,
-          aq1,
-          aq2,
-          aq3,
-          bq1,
-          bq2,
-          bq3,
-          cq1,
-          dq1
-          ) VALUES (
-          '".$iduser."',
-          '".$aq1."',
-          '".$aq2."',
-          '".$aq3."',
-          '".$bq1."',
-          '".$bq2."',
-          '".$bq3."',
-          '".$cq1."',
-          '".$dq1."'            
-          )";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } else {
-          echo "Insert error";
-        }
+       echo "not exist";
     }
        
 
@@ -111,9 +64,51 @@ if (isset($_POST['beautyquiz']))
     echo "notrecieved2";
   }
 
-
-
   if(isset($_GET['ajaxcall'])){
+    
+    $queryFilms = "SELECT * from user where iduser = ?";
+    $stmt->bind_param('s', $iduser);   
+    $result = $mysqli->query($queryFilms);
+   
+    $NameArray = array();
+    while ($row = $result->fetch_assoc()) {
+    $NameArray[] = $row['iduser'];
+    $NameArray[] = $row['aq1'];
+    $NameArray[] = $row['aq2'];
+    $NameArray[] = $row['aq3'];
+    $NameArray[] = $row['bq1'];
+    $NameArray[] = $row['bq2'];
+    $NameArray[] = $row['bq3'];
+    $NameArray[] = $row['cq1'];
+    $NameArray[] =  $row['dq1'];
+    }
+
+    print_r($NameArray);
+
+  }
+    
+
+    if ($_GET['ajaxcall']=='getdata') {
+      $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
+            $shopcurl = curl_init();
+            curl_setopt($shopcurl, CURLOPT_URL, $url);
+            curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json'
+            ));
+            curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
+            // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
+            curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
+            $response = curl_exec($shopcurl);
+            curl_close($shopcurl);
+            $json_returned = json_decode($response, true);
+            echo $json_returned['count'];
+            
+            
+  }
+
+
   if ($_GET['ajaxcall']=='getall') {
       $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
             $shopcurl = curl_init();
