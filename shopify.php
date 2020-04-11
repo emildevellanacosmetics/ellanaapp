@@ -55,15 +55,15 @@ if (isset($_POST['beautyquiz']))
     }else{
        echo "not exist";
     }
-       
-
-                $conn->close();              
+       $conn->close();              
 
 
   }else{
     echo "notrecieved2";
   }
 
+
+  /*
   if(isset($_GET['ajaxcall'])){
     
     $queryFilms = "SELECT * from user where iduser = ?";
@@ -86,7 +86,7 @@ if (isset($_POST['beautyquiz']))
     print_r($NameArray);
 
   }
-    
+    */
 
     if ($_GET['ajaxcall']=='getdata') {
       $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
