@@ -29,6 +29,7 @@ if (isset($_POST['beautyquiz']))
 {
     
 
+
     //var_dump the array so that we can view it's structure.
     // $data = json_encode($_POST['beautyquiz']);
     $data = $_POST['beautyquiz'];
@@ -40,7 +41,7 @@ if (isset($_POST['beautyquiz']))
     $bq2 = $data['bq2'];
     $bq3 = $data['bq3'];
     $cq1 = $data['cq1'];
-    $dq1 = $data['dq1'];
+    $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
 
     $stmt = $conn->prepare("SELECT iduser from user where iduser = '".$iduser."' ");
