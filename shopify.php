@@ -44,21 +44,7 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
  
-    $stmt = $conn->prepare("SELECT iduser from user where iduser = '".$iduser."' ");
-            
-      $stmt->execute();
-      $stmt->bind_result($iduser);
-      $stmt->store_result();
-      $numRows = $stmt->num_rows;
-
-    if ($numRows > 0)
-    {
-       echo "exist";
-    }else{
-       echo "not exist";
-    }
-       $conn->close();              
-
+echo "ssdfs";
 
   }else{
     echo "notrecieved2";
