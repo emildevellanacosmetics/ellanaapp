@@ -43,7 +43,7 @@ if (isset($_POST['beautyquiz']))
     $cq1 = $data['cq1'];
     $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
-
+ 
     $stmt = $conn->prepare("SELECT iduser from user where iduser = '".$iduser."' ");
             
       $stmt->execute();
