@@ -28,8 +28,6 @@ if ($conn->connect_error)
 if (isset($_POST['beautyquiz']))
 {
     
-
-
     //var_dump the array so that we can view it's structure.
     // $data = json_encode($_POST['beautyquiz']);
     $data = $_POST['beautyquiz'];
@@ -44,8 +42,34 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
  
-echo "ssdfs";
+    $sql = "INSERT INTO user                
+    (
+    iduser,
+    aq1,
+    aq2,
+    aq3,
+    bq1,
+    bq2,
+    bq3,
+    cq1,
+    dq1
+    ) VALUES (
+    '".$iduser."',
+    '".$aq1."',
+    '".$aq2."',
+    '".$aq3."',
+    '".$bq1."',
+    '".$bq2."',
+    '".$bq3."',
+    '".$cq1."',
+    '".$dq1."'            
+    )";
 
+  if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+  } else {
+    echo "Insert error";
+  }
   }else{
     echo "notrecieved2";
   }
