@@ -49,8 +49,24 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
  
-  echo "sdfsdfsdf";
-  
+    $sql = "UPDATE user
+    SET
+    aq1 = '" . $aq1 . "',
+    aq2 = '" . $aq2 . "',
+    aq3 = '" . $aq3 . "',
+    bq1 = '" . $bq1 . "',
+    bq2 = '" . $bq2 . "',
+    bq3 = '" . $bq3 . "',
+    cq1 = '" . $cq1 . "',
+    dq1 = '" . $dq1 . "'
+WHERE iduser = '" . $iduser . "'";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Recordupdatedsuccessfully";
+} else {
+  echo "Update Error";
+}
+
   $conn->close();              
 
   }
