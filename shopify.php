@@ -38,23 +38,34 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
  
-    $sql = "UPDATE user
-    SET
-    aq1 = '" . $aq1 . "',
-    aq2 = '" . $aq2 . "',
-    aq3 = '" . $aq3 . "',
-    bq1 = '" . $bq1 . "',
-    bq2 = '" . $bq2 . "',
-    bq3 = '" . $bq3 . "',
-    cq1 = '" . $cq1 . "',
-    dq1 = '" . $dq1 . "'
-WHERE iduser = '" . $iduser . "';
+    $sql = "INSERT INTO user                
+    (
+    iduser,
+    aq1,
+    aq2,
+    aq3,
+    bq1,
+    bq2,
+    bq3,
+    cq1,
+    dq1
+    ) VALUES (
+    '".$iduser."',
+    '".$aq1."',
+    '".$aq2."',
+    '".$aq3."',
+    '".$bq1."',
+    '".$bq2."',
+    '".$bq3."',
+    '".$cq1."',
+    '".$dq1."'            
+    )";
 
-        if ($conn->query($sql) === TRUE) {    
-            echo "update successfully";
-        } else {
-          echo "Insert error";
-        }
+  if ($conn->query($sql) === TRUE) {
+      echo "New record created successfully";
+  } else {
+    echo "Insert error";
+  }
 
   $conn->close();              
 
