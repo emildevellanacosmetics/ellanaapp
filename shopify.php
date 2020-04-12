@@ -220,9 +220,5 @@ if (isset($_POST['beautyquiz']))
             // echo $product_xml->variants->variant->{'inventory-quantity'};
             
         }
-        else
-        {
-            echo "not accepted";
-        }
 
 ?>
