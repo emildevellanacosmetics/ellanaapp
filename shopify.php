@@ -54,8 +54,8 @@ if (isset($_POST['beautyquiz']))
     dq1 = '" . $dq1 . "'
 WHERE iduser = '" . $iduser . "';
 
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
+        if ($conn->query($sql) === TRUE) {    
+            echo "update successfully";
         } else {
           echo "Insert error";
         }
