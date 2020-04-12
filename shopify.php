@@ -51,7 +51,7 @@ if (isset($_POST['beautyquiz']))
  
 
 
-    if ($result = $mysqli->query("SELECT * FROM user WHere iduser = '".$iduser ."'")) {
+    if ($result = $conn->query("SELECT * FROM user WHere iduser = '".$iduser ."'")) {
 
       /* determine number of rows result set */
       $row_cnt = $result->num_rows;
