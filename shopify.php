@@ -9,18 +9,14 @@ $TOKEN = '58b2593d6f6244ea402434320e31a1dc';
 $STORE_URL = 'ellana-cosmetics.myshopify.com';
 $PRODUCT_ID = 'product-id-here';
 
-$servername = "us-cdbr-iron-east-04.cleardb.net";
-$username = "b373f528b8e38d";
-$password = "e6cdc6ea";
-$dbname = "heroku_30c47afc2d3c720";
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-/*
-  require "config.php";
-  require "common.php";
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
 
-*/
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($server, $username, $password, $db);
 // Check connection
 if ($conn->connect_error)
 {
@@ -62,10 +58,6 @@ WHERE iduser = '" . $iduser . "';
 
   $conn->close();              
 
-  }else{
-    echo "notrecieved2";
   }
-
-
 
 ?>
