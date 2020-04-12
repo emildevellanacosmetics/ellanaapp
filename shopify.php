@@ -1,7 +1,7 @@
 <?php
 //Modify these
-// header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+header("Access-Control-Allow-Origin: *");
+// header("Content-Type: application/json; charset=UTF-8");
 //header("content-type: application/javascript");
 $API_KEY = '71883cf9cfce84d175fdc94f4e5819f2';
 $SECRET = '58b2593d6f6244ea402434320e31a1dc';
@@ -32,9 +32,7 @@ if (isset($_POST['beautyquiz']))
     //var_dump the array so that we can view it's structure.
     // $data = json_encode($_POST['beautyquiz']);
     $data = json_decode($_POST['beautyquiz'], false);
-
     $aq1 = $data['aq1'];
-
     $aq2 = $data['aq2'];
     $aq3 = $data['aq3'];
     $bq1 = $data['bq1'];
