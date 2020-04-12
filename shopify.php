@@ -31,6 +31,7 @@ if (isset($_POST['beautyquiz']))
     // $data = json_encode($_POST['beautyquiz']);
     $data = $_POST['beautyquiz'];
     $aq1 = $data['aq1'];
+
     $aq2 = $data['aq2'];
     $aq3 = $data['aq3'];
     $bq1 = $data['bq1'];
@@ -40,22 +41,33 @@ if (isset($_POST['beautyquiz']))
     $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
  
-    $sql = "UPDATE user
-            SET
-            aq1 = '" . $aq1 . "',
-            aq2 = '" . $aq2 . "',
-            aq3 = '" . $aq3 . "',
-            bq1 = '" . $bq1 . "',
-            bq2 = '" . $bq2 . "',
-            bq3 = '" . $bq3 . "',
-            cq1 = '" . $cq1 . "',
-            dq1 = '" . $dq1 . "'
-        WHERE iduser = '" . $iduser . "';
-        
+ $sql = "INSERT INTO user                
+          (
+          iduser,
+          aq1,
+          aq2,
+          aq3,
+          bq1,
+          bq2,
+          bq3,
+          cq1,
+          dq1
+          ) VALUES (
+          '".$iduser."',
+          '".$aq1."',
+          '".$aq2."',
+          '".$aq3."',
+          '".$bq1."',
+          '".$bq2."',
+          '".$bq3."',
+          '".$cq1."',
+          '".$dq1."'            
+          )";
+
         if ($conn->query($sql) === TRUE) {
-          echo "Recordupdatedsuccessfully";
+            echo "New record created successfully";
         } else {
-          echo "Update Error";
+          echo "Insert error";
         }
 
   $conn->close();              
