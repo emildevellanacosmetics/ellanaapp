@@ -43,15 +43,15 @@ if (isset($_POST['beautyquiz']))
  
     $sql = "UPDATE user
     SET
-    aq1 = '".$aq1."',
-    aq2 = '".$aq2 . "',
-    aq3 = '" . $aq3 . "',
-    bq1 = '" . $bq1 . "',
-    bq2 = '" . $bq2 . "',
-    bq3 = '" . $bq3 . "',
-    cq1 = '" . $cq1 . "',
-    dq1 = '" . $dq1 . "'
-WHERE iduser = '" . $iduser . "';
+    aq1 = '1',
+    aq2 = '1',
+    aq3 = '1',
+    bq1 = '1',
+    bq2 = '1',
+    bq3 = '1',
+    cq1 = '1',
+    dq1 = '1'
+WHERE iduser = '2999085203545';
 
         if ($conn->query($sql) === TRUE) {
             echo "Update successfully";
