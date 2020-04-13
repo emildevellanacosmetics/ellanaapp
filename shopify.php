@@ -117,7 +117,7 @@ if (isset($_POST['beautyquiz']))
 
     $data = $_GET['beautycall'];
     $iduser = $data['iduser'];
-    /*
+    
     $sql = "SELECT * FROM user WHERE iduser ='".$iduser."'";
     $result = $conn->query($sql);
 
@@ -151,8 +151,8 @@ if (isset($_POST['beautyquiz']))
         }
     } else {
         echo "0 results";
-    } */
-    echo $iduser;
+    } 
+    
 
   }
  
