@@ -113,29 +113,52 @@ if (isset($_POST['beautyquiz']))
 
   }
 
-  if(isset($_GET['ajaxcall'])){
-    
-    $queryFilms = "SELECT * from user where iduser = ?";
-    $stmt->bind_param('s', $iduser);   
-    $result = $mysqli->query($queryFilms);
-   
-    $NameArray = array();
-    while ($row = $result->fetch_assoc()) {
-    $NameArray[] = $row['iduser'];
-    $NameArray[] = $row['aq1'];
-    $NameArray[] = $row['aq2'];
-    $NameArray[] = $row['aq3'];
-    $NameArray[] = $row['bq1'];
-    $NameArray[] = $row['bq2'];
-    $NameArray[] = $row['bq3'];
-    $NameArray[] = $row['cq1'];
-    $NameArray[] =  $row['dq1'];
-    }
+  if (isset($_GET['beautycall'])){
 
-    print_r($NameArray);
+    $data = $_GET['beautycall'];
+    $iduser = $data['iduser'];
+
+    $sql = "SELECT * FROM user WHERE iduser ='".$iduser."'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+
+          $aq1 = $row['aq1'];
+          $aq2 = $row['aq2'];
+          $aq3 = $row['aq3'];
+          $bq1 = $row['bq1'];
+          $bq2 = $row['bq2'];
+          $bq3 = $row['bq3'];
+          $cq1 = $row['cq1'];
+          $dq1 = $row['dq1']; 
+          $iduser = $row['iduser'];
+          
+          $return_arr[] = array(
+                          "aq1" => $aq1,
+                          "aq2" => $aq2,
+                          "aq3" => $aq3,
+                          "bq1" => $bq1,
+                          "bq2" => $bq2,
+                          "bq3" => $bq3,
+                          "cq1" => $cq1,
+                          "dq1" => $dq1,
+                          "iduser" => $iduser
+                        );
+        echo json_encode($return_arr);
+
+        }
+    } else {
+        echo "0 results";
+    }
+    echo "testing";
 
   }
-    
+
+
+  
+  if(isset($_GET['ajaxcall'])){
 
     if ($_GET['ajaxcall']=='getdata') {
       $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
@@ -220,5 +243,5 @@ if (isset($_POST['beautyquiz']))
             // echo $product_xml->variants->variant->{'inventory-quantity'};
             
         }
-
+      }
 ?>
