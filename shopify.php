@@ -146,8 +146,6 @@ if (isset($_POST['beautyquiz']))
         echo json_encode($return_arr);
 
         }
-    } else {
-        echo "0";
     } 
     
 
