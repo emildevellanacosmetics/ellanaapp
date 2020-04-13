@@ -117,7 +117,6 @@ if (isset($_POST['beautyquiz']))
 
     $data = $_GET['beautycall'];
     $iduser = $data['iduser'];
-    echo $iduser;
     $sql = "SELECT * FROM user WHERE iduser = '".$iduser."'";
     $result = $conn->query($sql);
 
