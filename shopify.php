@@ -152,7 +152,7 @@ if (isset($_POST['beautyquiz']))
     } else {
         echo "0 results";
     } */
-    echo "testing";
+    echo $iduser;
 
   }
  
