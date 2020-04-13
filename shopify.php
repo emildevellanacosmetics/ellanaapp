@@ -133,7 +133,6 @@ if (isset($_POST['beautyquiz']))
           $bq3 = $row['bq3'];
           $cq1 = $row['cq1'];
           $dq1 = $row['dq1']; 
-          $iduser = $row['iduser'];
           
           $return_arr[] = array(
                           "aq1" => $aq1,
@@ -143,8 +142,7 @@ if (isset($_POST['beautyquiz']))
                           "bq2" => $bq2,
                           "bq3" => $bq3,
                           "cq1" => $cq1,
-                          "dq1" => $dq1,
-                          "iduser" => $iduser
+                          "dq1" => $dq1
                         );
         echo json_encode($return_arr);
 
