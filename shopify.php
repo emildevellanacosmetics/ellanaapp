@@ -155,9 +155,7 @@ if (isset($_POST['beautyquiz']))
     echo "testing";
 
   }
-
-
-  
+ 
   if(isset($_GET['ajaxcall'])){
 
     if ($_GET['ajaxcall']=='getdata') {
