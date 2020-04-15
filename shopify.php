@@ -10,8 +10,8 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 //header("Access-Control-Allow-Origin: *");
 // header("Content-Type: application/json; charset=UTF-8");
 //header("content-type: application/javascript");
-$API_KEY = '71883cf9cfce84d175fdc94f4e5819f2';
-$SECRET = '58b2593d6f6244ea402434320e31a1dc';
+$API_KEY = '4cf854673912040bdd999758c2038e13';
+$SECRET = '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';
 $TOKEN = '58b2593d6f6244ea402434320e31a1dc';
 $STORE_URL = 'ellana-cosmetics.myshopify.com';
 $PRODUCT_ID = 'product-id-here';
@@ -171,7 +171,7 @@ if (isset($_POST['beautyquiz']))
             curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json'
             ));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
             curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
             // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
