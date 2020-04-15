@@ -104,7 +104,7 @@ if (isset($_POST['beautyquiz']))
   }
   $conn->close();              
   }
-
+ 
   if (isset($_GET['beautycall'])){
 
     $data = $_GET['beautycall'];
