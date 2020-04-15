@@ -48,15 +48,10 @@ if (isset($_POST['beautyquiz']))
     $cq1 = $data['cq1'];
     $dq1 = $data['dq1']; 
     $iduser = $data['iduser'];
- 
-
 
     if ($result = $conn->query("SELECT * FROM user WHere iduser = '".$iduser ."'")) {
-
-      /* determine number of rows result set */
       $row_cnt = $result->num_rows;
-  
-          if ($row_cnt > 0){
+            if ($row_cnt > 0){
             $sql = "UPDATE user
             SET
             aq1 = '" . $aq1 . "',
@@ -104,13 +99,10 @@ if (isset($_POST['beautyquiz']))
       echo "Insert error";
     }
      }
-  
-      /* close result set */
+        /* close result set */
       $result->close();
   }
-
   $conn->close();              
-
   }
 
   if (isset($_GET['beautycall'])){
@@ -123,7 +115,6 @@ if (isset($_POST['beautyquiz']))
     if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
-
           $aq1 = $row['aq1'];
           $aq2 = $row['aq2'];
           $aq3 = $row['aq3'];
@@ -131,8 +122,7 @@ if (isset($_POST['beautyquiz']))
           $bq2 = $row['bq2'];
           $bq3 = $row['bq3'];
           $cq1 = $row['cq1'];
-          $dq1 = $row['dq1']; 
-          
+          $dq1 = $row['dq1'];           
           $return_arr[] = array(
                           "aq1" => $aq1,
                           "aq2" => $aq2,
@@ -153,6 +143,46 @@ if (isset($_POST['beautyquiz']))
  
   if(isset($_GET['ajaxcall'])){
 
+    if ($_GET['ajaxcall']=='getbeauty') {
+      $data = {
+        "customer": {
+          "first_name": "Steve",
+          "last_name": "Lastnameson",
+          "email": "steve.lastnameson@example.com",
+          "phone": "+15142546011",
+          "verified_email": true,
+          "addresses": [
+            {
+              "address1": "123 Oak St",
+              "city": "Ottawa",
+              "province": "ON",
+              "phone": "555-1212",
+              "zip": "123 ABC",
+              "last_name": "Lastnameson",
+              "first_name": "Mother",
+              "country": "CA"
+            }
+          ]
+        }
+      };
+      $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-04/customers.json";
+            $shopcurl = curl_init();
+            curl_setopt($shopcurl, CURLOPT_URL, $url);
+            curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json'
+            ));
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+            curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
+            // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
+            curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
+            $response = curl_exec($shopcurl);
+            curl_close($shopcurl);
+            $json_returned = json_decode($response, true);
+            echo $json_returned['customer'].id;
+  }
+
     if ($_GET['ajaxcall']=='getdata') {
       $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
             $shopcurl = curl_init();
@@ -169,8 +199,6 @@ if (isset($_POST['beautyquiz']))
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
             echo $json_returned['count'];
-            
-            
   }
 
 
