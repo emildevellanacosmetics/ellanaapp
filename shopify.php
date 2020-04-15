@@ -140,10 +140,11 @@ if (isset($_POST['beautyquiz']))
     
 
   }
-  if ($_POST['ajaxcall']=='add') {
-    echoo "sdfsdf";
-}
-
+  if(isset($_POST['ajaxcall'])){
+    if ($_POST['ajaxcall']=='add') {
+      echoo "sdfsdf";
+    }
+  }
   if(isset($_GET['ajaxcall'])){
 
 
