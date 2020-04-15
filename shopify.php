@@ -10,10 +10,10 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 //header("Access-Control-Allow-Origin: *");
 // header("Content-Type: application/json; charset=UTF-8");
 //header("content-type: application/javascript");
-$API_KEY = '71883cf9cfce84d175fdc94f4e5819f2';
-$SECRET = '58b2593d6f6244ea402434320e31a1dc';
-$TOKEN = '58b2593d6f6244ea402434320e31a1dc';
-$STORE_URL = 'ellana-cosmetics.myshopify.com';
+$API_KEY = '4cf854673912040bdd999758c2038e13';
+$SECRET = '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';
+$TOKEN = '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';
+$STORE_URL = 'ellanacosmetics-staging.myshopify.com';
 $PRODUCT_ID = 'product-id-here';
 
 $servername = "us-cdbr-iron-east-04.cleardb.net";
