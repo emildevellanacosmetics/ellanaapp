@@ -143,7 +143,7 @@ if (isset($_POST['beautyquiz']))
  
   if(isset($_GET['ajaxcall'])){
 
-    if ($_GET['ajaxcall']=='getbeauty') {
+    if ($_GET['ajaxcall']['process']=='add') {
       $data = {
         "customer": {
           "first_name": "Steve",
