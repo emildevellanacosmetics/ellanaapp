@@ -193,7 +193,7 @@ if(isset($_POST['ajaxcall'])){
             $json_returned = json_decode($response, true);
             echo "xxx";
             echo $json_returned['count'];
-            echo "xxx";
+            echo "xxx"; 
   }
 }
   if(isset($_GET['ajaxcall'])){
