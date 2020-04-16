@@ -142,7 +142,7 @@ if (isset($_POST['beautyquiz']))
   }
  */
 if(isset($_POST['ajaxcall'])){
-     if ($_POST['ajaxcall']=='add') {
+     if ($_POST['ajaxcall']['process']=='add') {
       $data = $_POST['ajaxcall'];
       $beautyregname = $data['beautyregname'];
       $beautyreglastname = $data['beautyreglastname'];
