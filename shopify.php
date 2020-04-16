@@ -12,8 +12,8 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 //header("content-type: application/javascript");
 $API_KEY = '4cf854673912040bdd999758c2038e13';
 $SECRET = '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';
-$TOKEN = '58b2593d6f6244ea402434320e31a1dc';
-$STORE_URL = 'ellana-cosmetics.myshopify.com';
+$TOKEN = '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';
+$STORE_URL = 'ellanacosmetics-staging.myshopify.com';
 $PRODUCT_ID = 'product-id-here';
 
 $servername = "us-cdbr-iron-east-04.cleardb.net";
