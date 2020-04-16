@@ -181,9 +181,6 @@ if(isset($_POST['ajaxcall'])){
               echo $error_msg.errors;
               
             }else{
-              echo "xxx";
-              echo "ok";
-              echo "xxx"; 
             }
 
   }
