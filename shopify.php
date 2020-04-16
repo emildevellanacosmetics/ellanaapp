@@ -165,7 +165,9 @@ if(isset($_POST['ajaxcall'])){
       );
 
       $data_string = json_encode($customerData);
-      $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-04/customers.json";
+      echo $data_string;
+      /*
+        $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-04/customers.json";
             $shopcurl = curl_init();
             curl_setopt($shopcurl, CURLOPT_URL, $url);
             curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
@@ -186,7 +188,7 @@ if(isset($_POST['ajaxcall'])){
               
             }else{
             }
-
+*/
   }
 }
   if(isset($_GET['ajaxcall'])){
