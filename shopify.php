@@ -146,9 +146,9 @@ if(isset($_POST['ajaxcall'])){
       $customerData = array
       (
           "customer" => array(
-              "first_name"    =>  "Steve",
-              "last_name"     =>  "Lastnameson",
-              "email"         =>  "steve2222.lastnameson10@test.com",
+              "first_name"    =>  "Stevse",
+              "last_name"     =>  "Lastnsameson",
+              "email"         =>  "stesdfsdfsdf@test.com",
               "verified_email"=>  true,
               "addresses"     =>  array(
                   array(
@@ -181,10 +181,12 @@ if(isset($_POST['ajaxcall'])){
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
             if (isset($error_msg)) {
-           
+              
+              echo $error_msg;
+              
             }else{
               echo "xxx";
-              echo $json_returned;
+              echo "ok";
               echo "xxx"; 
             }
 
