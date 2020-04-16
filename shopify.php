@@ -180,7 +180,7 @@ if(isset($_POST['ajaxcall'])){
             $response = curl_exec($shopcurl);
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
-            echo "ok";
+            echo $json_returned ;
   }
 }
   if(isset($_GET['ajaxcall'])){
