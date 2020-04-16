@@ -182,7 +182,7 @@ if(isset($_POST['ajaxcall'])){
             $json_returned = json_decode($response, true);
             if (isset($error_msg)) {
               
-              echo "XX". $error_msg . "XX";
+              echo $error_msg.errors;
               
             }else{
               echo "xxx";
