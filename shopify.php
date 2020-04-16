@@ -171,23 +171,19 @@ if(isset($_POST['ajaxcall'])){
             curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json'
             ));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
-
-
-            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);// allow redirects
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); //return var
-            curl_setopt($ch, CURLOPT_VERBOSE, true);
-            curl_setopt($ch, CURLOPT_HEADER, true);
-            curl_setopt($ch, CURLOPT_MAXREDIRS, 3);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
-            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
-            curl_setopt($ch, CURLOPT_USERAGENT, 'HAC');
-            curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 30);
-            curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-
+            curl_setopt($shopcurl, CURLOPT_POSTFIELDS, $data_string);
+            curl_setopt($shopcurl, CURLOPT_FOLLOWLOCATION, true);// allow redirects
+            curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true); //return var
+            curl_setopt($shopcurl, CURLOPT_VERBOSE, true);
+            curl_setopt($shopcurl, CURLOPT_HEADER, true);
+            curl_setopt($shopcurl, CURLOPT_MAXREDIRS, 3);
+            curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, true);
+            curl_setopt($shopcurl, CURLOPT_SSL_VERIFYHOST, 2);
+            curl_setopt($shopcurl, CURLOPT_USERAGENT, 'HAC');
+            curl_setopt($shopcurl, CURLOPT_CONNECTTIMEOUT, 30);
+            curl_setopt($shopcurl, CURLOPT_TIMEOUT, 30);
             // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
             curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
-           
             $response = curl_exec($shopcurl);
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
