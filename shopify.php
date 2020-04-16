@@ -148,7 +148,7 @@ if(isset($_POST['ajaxcall'])){
           "customer" => array(
               "first_name"    =>  "Stevse",
               "last_name"     =>  "Lastnsameson",
-              "email"         =>  "stesdfsdfsdf@test.com",
+              "email"         =>  "stesdfsdfsd0909f@test.com",
               "verified_email"=>  true,
               "addresses"     =>  array(
                   array(
