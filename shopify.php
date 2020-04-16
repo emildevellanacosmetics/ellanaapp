@@ -143,25 +143,21 @@ if (isset($_POST['beautyquiz']))
  */
 if(isset($_POST['ajaxcall'])){
      if ($_POST['ajaxcall']=='add') {
+      $data = $_POST['ajaxcall'];
+      $beautyregname = $data['beautyregname'];
+      $beautyreglastname = $data['beautyreglastname'];
+      $beautyregemail = $data['beautyregemail'];
+      $beautyregpassword = $data['beautyregpassword'];
       $customerData = array
       (
           "customer" => array(
-              "first_name"    =>  "Stevse",
-              "last_name"     =>  "Lastnsameson",
-              "email"         =>  "stesdfsdfsd0909f@test.com",
-              "verified_email"=>  true,
-              "addresses"     =>  array(
-                  array(
-                      "address1"  =>  "123 Oak St",
-                      "city"      =>  "Ottawa",
-                      "country"   =>  "CA",
-                      "first_name"=>  "Mother",
-                      "last_name" =>  "Lastnameson",
-                      "phone"     =>  "555-1212",
-                      "province"  =>  "ON",
-                      "zip"       =>  "123 AB"
-                  )
-              )
+              "first_name"    =>  $beautyregname,
+              "last_name"     =>  $beautyreglastname,
+              "email"         =>  $beautyregemail,
+              "verified_email" =>  true,
+              "password": $beautyregpassword,
+              "password_confirmation": $beautyregpassword,
+              "send_email_welcome": false
           )
       );
       $data_string = json_encode($customerData);
