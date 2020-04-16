@@ -181,9 +181,7 @@ if(isset($_POST['ajaxcall'])){
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
             if (isset($error_msg)) {
-              echo "xxx";
-              echo $error_msg;
-              echo "xxx";
+           
             }else{
               echo "xxx";
               echo $json_returned;
