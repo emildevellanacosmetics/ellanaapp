@@ -149,8 +149,8 @@ if(isset($_POST['ajaxcall'])){
       $beautyreglastname = $data['beautyreglastname'];
       $beautyregemail = $data['beautyregemail'];
       $beautyregpassword = $data['beautyregpassword'];
-      echo $beautyregpassword;
-          /*
+   
+   
       $customerData = array
       (
           "customer" => array(
@@ -163,6 +163,7 @@ if(isset($_POST['ajaxcall'])){
               "send_email_welcome": false
           )
       );
+
       $data_string = json_encode($customerData);
       $url="https://".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-04/customers.json";
             $shopcurl = curl_init();
@@ -185,7 +186,7 @@ if(isset($_POST['ajaxcall'])){
               
             }else{
             }
-*/
+
   }
 }
   if(isset($_GET['ajaxcall'])){
