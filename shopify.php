@@ -11,7 +11,7 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 // header("Content-Type: application/json; charset=UTF-8");
 //header("content-type: application/javascript");
 $API_KEY = '4cf854673912040bdd999758c2038e13';
-$SECRET = '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';
+$SECRET = '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';
 $TOKEN = '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';
 $STORE_URL = 'ellanacosmetics-staging.myshopify.com';
 $PRODUCT_ID = 'product-id-here';
@@ -172,16 +172,6 @@ if(isset($_POST['ajaxcall'])){
                 'Content-Type: application/json'
             ));
             curl_setopt($shopcurl, CURLOPT_POSTFIELDS, $data_string);
-            curl_setopt($shopcurl, CURLOPT_FOLLOWLOCATION, true);// allow redirects
-            curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true); //return var
-            curl_setopt($shopcurl, CURLOPT_VERBOSE, true);
-            curl_setopt($shopcurl, CURLOPT_HEADER, true);
-            curl_setopt($shopcurl, CURLOPT_MAXREDIRS, 3);
-            curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, true);
-            curl_setopt($shopcurl, CURLOPT_SSL_VERIFYHOST, 2);
-            curl_setopt($shopcurl, CURLOPT_USERAGENT, 'HAC');
-            curl_setopt($shopcurl, CURLOPT_CONNECTTIMEOUT, 30);
-            curl_setopt($shopcurl, CURLOPT_TIMEOUT, 30);
             // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
             curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
             $response = curl_exec($shopcurl);
