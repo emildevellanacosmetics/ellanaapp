@@ -11,8 +11,8 @@ header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 // header("Content-Type: application/json; charset=UTF-8");
 //header("content-type: application/javascript");
 $API_KEY = '4cf854673912040bdd999758c2038e13';
-$SECRET = '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';
-$TOKEN = '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';
+$SECRET = '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';
+$TOKEN = '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';
 $STORE_URL = "ellanacosmetics-staging.myshopify.com";
 $PRODUCT_ID = 'product-id-here';
 
