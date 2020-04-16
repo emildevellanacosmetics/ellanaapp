@@ -144,34 +144,35 @@ if (isset($_POST['beautyquiz']))
   if(isset($_GET['ajaxcall'])){
 
     if ($_GET['ajaxcall']=='add') {
-      $data = {
-        "customer": {
-          "first_name": "Steve",
-          "last_name": "Lastnameson",
-          "email": "steve.lastnameson@example.com",
-          "phone": "+15142546011",
-          "verified_email": true,
-          "addresses": [
-            {
-              "address1": "123 Oak St",
-              "city": "Ottawa",
-              "province": "ON",
-              "phone": "555-1212",
-              "zip": "123 ABC",
-              "last_name": "Lastnameson",
-              "first_name": "Mother",
-              "country": "CA"
-            }
-          ]
-        }
-      };
+      $customerData = array
+      (
+          "customer" => array(
+              "first_name"    =>  "Steve",
+              "last_name"     =>  "Lastnameson",
+              "email"         =>  "steve.lastnameson10@test.com",
+              "verified_email"=>  true,
+              "addresses"     =>  array(
+                  array(
+                      "address1"  =>  "123 Oak St",
+                      "city"      =>  "Ottawa",
+                      "country"   =>  "CA",
+                      "first_name"=>  "Mother",
+                      "last_name" =>  "Lastnameson",
+                      "phone"     =>  "555-1212",
+                      "province"  =>  "ON",
+                      "zip"       =>  "123 AB"
+                  )
+              )
+          )
+      );
+      $data_string = json_encode($customerData);
       $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-04/customers.json";
             $shopcurl = curl_init();
             curl_setopt($shopcurl, CURLOPT_URL, $url);
             curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json'
             ));
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
             curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
             // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
