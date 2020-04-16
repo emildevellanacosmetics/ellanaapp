@@ -175,11 +175,24 @@ if(isset($_POST['ajaxcall'])){
              curl_setopt($shopcurl, CURLOPT_HEADER, 1);
             curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
             $response = curl_exec($shopcurl);
+            if (curl_errno($shopcurl)) {
+              $error_msg = curl_error($ch);
+            }
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
-            echo "xxx";
-            echo $json_returned;
-            echo "xxx"; 
+
+    
+            
+            if (isset($error_msg)) {
+              echo "xxx";
+              echo $error_msg;
+              echo "xxx";
+            }else{
+              echo "xxx";
+              echo $json_returned;
+              echo "xxx"; 
+            }
+
   }
 }
   if(isset($_GET['ajaxcall'])){
