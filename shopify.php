@@ -173,6 +173,7 @@ if(isset($_POST['ajaxcall'])){
             curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json'
             ));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($shopcurl, CURLOPT_POSTFIELDS, $data_string);
              curl_setopt($shopcurl, CURLOPT_HEADER, 1);
             curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
@@ -183,7 +184,7 @@ if(isset($_POST['ajaxcall'])){
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
             if (isset($error_msg)) {
-              //echo $error_msg['errors'];
+              echo $error_msg['errors'];
             }else{
             }
   }
