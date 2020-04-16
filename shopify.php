@@ -141,9 +141,8 @@ if (isset($_POST['beautyquiz']))
 
   }
  */
-  if(isset($_GET['ajaxcall'])){
-
-    if ($_GET['ajaxcall']=='add') {
+if(isset($_POST['ajaxcall'])){
+     if ($_POST['ajaxcall']=='add') {
       $customerData = array
       (
           "customer" => array(
@@ -183,7 +182,8 @@ if (isset($_POST['beautyquiz']))
             $json_returned = json_decode($response, true);
             echo "ok";
   }
-
+}
+  if(isset($_GET['ajaxcall'])){
     if ($_GET['ajaxcall']=='getdata') {
       $url="https: //".$API_KEY.":".$SECRET."@".$STORE_URL."/admin/api/2020-01/orders/count.json?status=any";
             $shopcurl = curl_init();
