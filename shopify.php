@@ -191,7 +191,9 @@ if(isset($_POST['ajaxcall'])){
             $response = curl_exec($shopcurl);
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
-            echo $json_returned ;
+            echo "xxx";
+            echo $json_returned['count'];
+            echo "xxx";
   }
 }
   if(isset($_GET['ajaxcall'])){
@@ -210,9 +212,7 @@ if(isset($_POST['ajaxcall'])){
             $response = curl_exec($shopcurl);
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
-            echo "xxx";
             echo $json_returned['count'];
-            echo "xxx";
   }
 
   if ($_GET['ajaxcall']=='getall') {
