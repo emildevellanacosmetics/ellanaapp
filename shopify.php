@@ -143,12 +143,14 @@ if (isset($_POST['beautyquiz']))
  */
 if(isset($_POST['ajaxcall'])){
      $data = $_POST['ajaxcall'];
-     if ($data ['process']=='add') {
-      
+     if ($data['process']=='add') {
+  
       $beautyregname = $data['beautyregname'];
       $beautyreglastname = $data['beautyreglastname'];
       $beautyregemail = $data['beautyregemail'];
       $beautyregpassword = $data['beautyregpassword'];
+      echo $beautyregpassword;
+          /*
       $customerData = array
       (
           "customer" => array(
@@ -183,7 +185,7 @@ if(isset($_POST['ajaxcall'])){
               
             }else{
             }
-
+*/
   }
 }
   if(isset($_GET['ajaxcall'])){
