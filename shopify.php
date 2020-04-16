@@ -172,7 +172,7 @@ if(isset($_POST['ajaxcall'])){
                 'Content-Type: application/json'
             ));
             curl_setopt($shopcurl, CURLOPT_POSTFIELDS, $data_string);
-            // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
+             curl_setopt($shopcurl, CURLOPT_HEADER, 1);
             curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
             $response = curl_exec($shopcurl);
             curl_close($shopcurl);
