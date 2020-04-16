@@ -176,7 +176,7 @@ if(isset($_POST['ajaxcall'])){
             curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
             $response = curl_exec($shopcurl);
             if (curl_errno($shopcurl)) {
-              $error_msg = curl_error($shopcur);
+              $error_msg = curl_error($shopcurl);
             }
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
