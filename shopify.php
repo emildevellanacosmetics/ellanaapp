@@ -185,10 +185,11 @@ if(isset($_POST['ajaxcall'])){
             curl_close($shopcurl);
             $json_returned = json_decode($response, true);
             if (isset($error_msg)) {
-              echo $json_returned;
+              
             }else{
-              echo $json_returned;
+              
             }
+            echo $json_returned;
   }
 }
   if(isset($_GET['ajaxcall'])){
