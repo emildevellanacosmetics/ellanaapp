@@ -173,7 +173,7 @@ if(isset($_POST['ajaxcall'])){
             curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json'
             ));
-            curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
+            
             curl_setopt($shopcurl, CURLOPT_POSTFIELDS, $data_string);
              curl_setopt($shopcurl, CURLOPT_HEADER, 1);
              curl_setopt($ch, CURLOPT_VERBOSE, 0); 
