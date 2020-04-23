@@ -37,6 +37,11 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
 }
 
+
+
+
+
+
 if (isset($_POST['beautyquiz']))
 {
     //var_dump the array so that we can view it's structure.
