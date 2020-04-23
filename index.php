@@ -1,6 +1,6 @@
 <h1 style="text-align:center">Ellana Cosmetics Private App</h1>
 <h4 style="text-align:center">Forbidden Area</h4>
-
+<?php 
 $request = new HttpRequest();
 $request->setUrl('https://trx-test.billease.ph/be-transactions-api/trx/checkout');
 $request->setMethod(HTTP_METH_POST);
@@ -92,3 +92,4 @@ try {
 } catch (HttpException $ex) {
   echo $ex;
 }
+?>
