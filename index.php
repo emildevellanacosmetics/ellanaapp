@@ -44,7 +44,7 @@
         ),
         'callbackapi_url' => 'https://youtube.com',
         'url_redirect' => 'https://youtube.com',
-        'order_id' => 'ORDER-23',
+        'order_id' => 'ORDER-23'
       );
 
       $data_string = json_encode($customerData);
