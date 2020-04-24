@@ -14,7 +14,6 @@
         'amount' => 20000,
         'currency' => 'PHP',
         'merchant_code' => $MECHANT_CODE,
-        'bem_id' => 4,
         'checkout_type' => 'standard',
         'items' => 
         array (
