@@ -50,7 +50,7 @@
       $data_string = json_encode($customerData);
       curl_setopt($shopcurl, CURLOPT_URL, $STORE_URL);
       curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
-        'Authorization' => 'Bearer ' . $API_KEY,
+        'Authorization' => $API_KEY,
         'Content-Type' => 'application/json'
       ));
       curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
