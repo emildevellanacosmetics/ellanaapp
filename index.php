@@ -64,6 +64,6 @@
       $response = curl_exec($shopcurl);
       curl_close($shopcurl);
       $json_returned = json_decode($response, true);
-      echo $json_returned['status'];
+      echo $json_returned;
       // echo $product_xml->variants->variant->{'inventory-quantity'};
 ?>
