@@ -67,4 +67,4 @@
       echo json_encode($json_returned);
  
       // echo $product_xml->variants->variant->{'inventory-quantity'};
-?>
+?> 
