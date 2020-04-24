@@ -1,95 +1,69 @@
 <h1 style="text-align:center">Ellana Cosmetics Private App</h1>
 <h4 style="text-align:center">Forbidden Area</h4>
 <?php 
-$request = new HttpRequest();
-$request->setUrl('https://trx-test.billease.ph/be-transactions-api/trx/checkout');
-$request->setMethod(HTTP_METH_POST);
+      $API_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI3ZDRlYjMxZi00NDkwLTQzZWQtOWJhZi1lMzUxYWJjMzk4MTUiLCJjb2RlIjoiN2Q0ZWIzMWYtNDQ5MC00M2VkLTliYWYtZTM1MWFiYzM5ODE1IiwibmFtZSI6IkVsbGFuYSBDb3NtZXRpY3MgSW5jLiAiLCJpZCI6MTE4LCJyb2xlcyI6eyJiZS10cmFuc2FjdGlvbnMiOlsibWVyY2hhbnQiLCJ0cnhfcmVhZCIsInRyeF93cml0ZSIsInJlZnVuZCIsImJlX2FjYyJdfSwidG9rZW5fdHlwZSI6ImFjY2VzcyIsImV4cCI6MTc0NTMxMDIzNywiaWF0IjoxNTg3NjMzNDMxLCJqdGkiOiI1N2U3NDYzMS1iYjM0LTRlOGMtOGI5YS0yYzE0M2JlMjZmYmQifQ.IQj6MGHfDb2rFjiv3XnyEwAiocubohVOtNUcamEha-M';
+      $SECRET = 'rCMBuQcvUCsj8w9R5ULT7gnJjHjLrwn83yqmrSQfDY541lupMcPcAbRREikh4qOo';
+      $STORE_URL = 'https://pub.staging.fdfc.io/be-transactions-api/trx/checkout';
+      $TOKEN_ID = '998e14e0-5310-45c3-a1bc-2b228ea76aab';
+      $MECHANT_CODE = '7d4eb31f-4490-43ed-9baf-e351abc39815';
+      $SHOP_CODE = '83ad5234-62b0-4a61-92d1-79762db4cc9d';
+      $shopcurl = curl_init();
 
-$request->setHeaders(array(
-  'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiaWxsZWFzZS1qd3QiLCJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFwcGxlIGFuZCBjby4iLCJpYXQiOjE1MTYyMzkwMjIsImNvZGUiOiIxMjNlNDU2Ny1lODliLTEyZDMtYTQ1Ni00MjY2NTU0NDAwMDAiLCJ0b2tlbmlkIjoiZHNmYmFocTIzMjUzd2VyaGZhbzY4cXBic2RmODM0OTJnZWhqciIsImtleSI6InVpdHd5ZXJiZGpzYWYzNDk4MmtqaGdhc2RmMDI5MWFmazI5MCJ9.uV24Chf32ECnsGpUNqU_PMNjVexjmF-K59c7YeIS3mE',
-  'Content-Type' => 'application/json'
-));
 
-$request->setBody('{
-  "shop_id": "D5103E13-3EEC-44C3-A1B3-AE02592C4C43",
-  "amount": 20000,
-  "currency": "PHP",
-  "merchant_id": "73CB6A3A-67AB-43E8-9267-E04ABA1CA77E",
-  "checkout_type": "standard",
-  "items": [
-    {
-      "code": "SKU123e4567",
-      "item": "iPhone Xs",
-      "price": 10000,
-      "quantity": 1,
-      "currency": "PHP",
-      "url_item": "https://www.lazada.com.ph/products/apple-iphone-xs-i262561730-s364449221.html?spm=a2o4l.searchlist.list.6.2d46599fbfVZWH&search=1",
-      "url_img": "https://upload.wikimedia.org/wikipedia/commons/3/3b/IPhone_5s_top.jpg",
-      "category": "mobile",
-      "seller_code": "ALPHABET123",
-      "item_type": "item"
-    },
-    {
-      "code": "SKU123e4568",
-      "item": "MacBook Pro",
-      "price": 10000,
-      "quantity": 1,
-      "currency": "PHP",
-      "url_item": "https://www.lazada.com.ph/products/macbook-pro-133-matte-protective-case-gold-i100057364-s100071533.html?spm=a2o4l.searchlistbrand.list.17.4fd7afdfABECD6&search=1",
-      "url_img": "https://upload.wikimedia.org/wikipedia/commons/1/1d/MacBook_Pro%2C_Late-2008.jpg",
-      "category": "mobile",
-      "seller_code": "ALPHABET123",
-      "item_type": "item"
-    }
-  ],
-  "sellers": [
-    {
-      "code": "ALPHABET123",
-      "seller_name": "Alphabet inc.",
-      "url": "http://example.com",
-      "email": "info@example.com",
-      "phone": "+639054196316",
-      "country": "PH",
-      "province": "NRC",
-      "city": "Manila",
-      "barangay": "Makati",
-      "street": "Paseo de Roxas 104",
-      "address": "Address in one line"
-    }
-  ],
-  "customer": {
-    "full_name": "Vitalii Sharavara",
-    "email": "sharavara@example.com",
-    "phone": "+639054194316",
-    "adr_billing": {
-      "addr_type": "billing",
-      "country": "PH",
-      "province": "NCR",
-      "city": "Manila",
-      "barangay": "Makati",
-      "street": "Paseo de Roxas 104",
-      "address": "Address in one line"
-    },
-    "adr_shipping": {
-      "addr_type": "shipping",
-      "country": "PH",
-      "province": "NCR",
-      "city": "Manila",
-      "barangay": "Makati",
-      "street": "Paseo de Roxas 104",
-      "address": "Address in one line"
-    }
-  },
-  "callbackapi_url": "https://example.com/api/update",
-  "url_redirect": "https://example.com/xxx.html",
-  "order_id": "ORDER-23"
-}');
+      $customerData = array (
+        'shop_code' => $SHOP_CODE,
+        'amount' => 20000,
+        'currency' => 'PHP',
+        'merchant_code' => $MECHANT_CODE,
+        'bem_id' => 4,
+        'checkout_type' => 'standard',
+        'items' => 
+        array (
+          0 => 
+          array (
+          ),
+          1 => 
+          array (
+          ),
+        ),
+        'sellers' => 
+        array (
+          0 => 
+          array (
+          ),
+        ),
+        'customer' => 
+        array (
+          'full_name' => 'Vitalii Sharavara',
+          'email' => 'sharavara@example.com',
+          'phone' => 639054194316,
+          'adr_billing' => 
+          array (
+          ),
+          'adr_shipping' => 
+          array (
+          ),
+        ),
+        'callbackapi_url' => 'https://youtube.com',
+        'url_redirect' => 'https://youtube.com',
+        'order_id' => 'ORDER-23',
+      );
 
-try {
-  $response = $request->send();
+      $data_string = json_encode($customerData);
 
-  echo $response->getBody();
-} catch (HttpException $ex) {
-  echo $ex;
-}
+      curl_setopt($shopcurl, CURLOPT_URL, $STORE_URL);
+      curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
+        'Authorization' => 'Bearer ' . $API_KEY,
+        'Content-Type' => 'application/json'
+      ));
+      curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
+      curl_setopt($shopcurl, CURLOPT_CUSTOMREQUEST, "POST");
+      curl_setopt($shopcurl, CURLOPT_POSTFIELDS, $data_string);
+      curl_setopt($shopcurl, CURLOPT_SSL_VERIFYPEER, false);
+      $response = curl_exec($shopcurl);
+      curl_close($shopcurl);
+      $json_returned = json_decode($response, true);
+      echo $json_returned['status'];
+      // echo $product_xml->variants->variant->{'inventory-quantity'};
 ?>
