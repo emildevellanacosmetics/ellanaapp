@@ -266,8 +266,10 @@ if(isset($_POST['ajaxcall'])){
             $shopcurl = curl_init();
             curl_setopt($shopcurl, CURLOPT_URL, $url);
             curl_setopt($shopcurl, CURLOPT_HTTPHEADER, array(
-                'Content-Type: application/json'
-            ));
+              'Authorization' => 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJiaWxsZWFzZS1qd3QiLCJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFwcGxlIGFuZCBjby4iLCJpYXQiOjE1MTYyMzkwMjIsImNvZGUiOiIxMjNlNDU2Ny1lODliLTEyZDMtYTQ1Ni00MjY2NTU0NDAwMDAiLCJ0b2tlbmlkIjoiZHNmYmFocTIzMjUzd2VyaGZhbzY4cXBic2RmODM0OTJnZWhqciIsImtleSI6InVpdHd5ZXJiZGpzYWYzNDk4MmtqaGdhc2RmMDI5MWFmazI5MCJ9.uV24Chf32ECnsGpUNqU_PMNjVexjmF-K59c7YeIS3mE',
+              'Content-Type' => 'application/json'
+            )
+            );
             curl_setopt($shopcurl, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($shopcurl, CURLOPT_VERBOSE, 0);
             // curl_setopt($shopcurl, CURLOPT_HEADER, 1);
